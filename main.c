@@ -38,9 +38,8 @@ int main()
     // create base GFX
     #ifdef entry_active_gfx
     for (u32 i = 0; i < MENU_MAX_ENTRIES; i++) {
-        printf("composite -gravity NorthWest -geometry +%i+%i -blend %i %s %s base%02i.png\n",
-            entry_gfx_start_x + i * entry_gfx_step_x, entry_gfx_start_y + i * entry_gfx_step_y,
-            entry_gfx_opacity, entry_active_gfx, base_gfx, i);
+        printf("convert -page 320x240+0+0 %s -page +%i+%i %s -flatten base%02i.png\n",
+            base_gfx, entry_gfx_start_x + i * entry_gfx_step_x, entry_gfx_start_y + i * entry_gfx_step_y, entry_active_gfx, i);
     }
     #endif
     
