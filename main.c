@@ -36,8 +36,8 @@ int main()
     printf("@echo off\n\n");
     printf("set BUILD=build\n");
     printf("set OUTPUT=output\n");
-    printf("md %%BUILD%%\n");
-    printf("md %%OUTPUT%%\n");
+    printf("if not exist %%BUILD%% md %%BUILD%%\n");
+    printf("if not exist %%OUTPUT%% md %%OUTPUT%%\n\n");
     
     // create base GFX
     #ifdef entry_active_gfx
@@ -61,7 +61,7 @@ int main()
         }
         for (u32 a = 0; a < 2; a++) {
             printf( "convert -background transparent -font %s -pointsize %i ", entry_font, entry_font_size );
-            printf( "-fill %s \"label:%s\" %%BUILD%%/mlabel%02i_%i.png\n", // ???
+            printf( "-fill %s \"label:%s\" %%BUILD%%/mlabel%02i_%i.png\n",
                 (a == 1) ? menu_active_color : menu_inactive_color, menu[idx_m].name, idx_m, a);
         }
     }
@@ -73,7 +73,7 @@ int main()
         for (u32 idx_s = 0; idx_s < menu[idx_m].n_entries; idx_s++) {
             printf( "convert %%BUILD%%/base%02i.png ", idx_s );
             for (u32 i = 0; i < menu[idx_m].n_entries; i++) {
-                printf( "-draw \"image over %i,%i 0,0 '%%BUILD%%/label%04i_%i.png'\" ",
+                printf( "-draw \"image over %i,%i 0,0 %%BUILD%%/label%04i_%i.png\" ",
                     entry_start_x + i * entry_step_x, entry_start_y + i * entry_step_y,
                     (idx_m * 100) + i, (idx_s == i) ? 1 : 0);
             }
@@ -83,11 +83,11 @@ int main()
                 idx_m_lr[0] = (idx_m > 0) ? idx_m - 1 : SUBMENU_START - 1;
                 idx_m_lr[1] = (idx_m < SUBMENU_START - 1) ? idx_m + 1 : 0;
                 for (u32 i = 0; i < 2; i++) {
-                    printf( "-draw \"image over %i,%i 0,0 '%%BUILD%%/mlabel%02i_0.png'\" ",
+                    printf( "-draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_0.png\" ",
                         menu_start_x + i * 2 * menu_step_x, menu_start_y + i * 2 * menu_step_y, idx_m_lr[i] );
                 }
             }
-            printf( "-draw \"image over %i,%i 0,0 '%%BUILD%%/mlabel%02i_1.png'\" ",
+            printf( "-draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_1.png\" ",
                 menu_start_x + menu_step_x, menu_start_y + menu_step_y, idx_m );
             printf( "%%OUTPUT%%/menu%04i.png\n", (idx_m * 100) + idx_s );
         }
