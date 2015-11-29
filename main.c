@@ -58,7 +58,7 @@ int main()
             }
         }
         for (u32 a = 0; a < 2; a++) {
-            printf( "convert -background transparent -font %s -pointsize %i ", entry_font, entry_font_size );
+            printf( "convert -background transparent -font %s -pointsize %i ", menu_font, menu_font_size );
             printf( "-fill %s \"label:%s\" %%BUILD%%/mlabel%02i_%i.png\n",
                 (a == 1) ? menu_active_color : menu_inactive_color, menu[idx_m].name, idx_m, a);
         }
