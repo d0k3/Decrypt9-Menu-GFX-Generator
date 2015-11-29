@@ -20,63 +20,63 @@ typedef struct {
 MenuInfo menu[] =
 {
     {
-        "XORpad Generator", 4,
+        "XORPAD", 4,
         {
-            { "NCCH Padgen", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", 0, 0, 0 },
-            { "SD Padgen", NULL, 0, 0, 0 },
-            { "CTRNAND Padgen", NULL, 0, 0, 0 },
-            { "TWLNAND Padgen", NULL, 0, 0, 0 }
+            { "NCCH PADGEN", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", 0, 0, 0 },
+            { "SD PADGEN", NULL, 0, 0, 0 },
+            { "CTRNAND PADGEN", NULL, 0, 0, 0 },
+            { "TWLNAND PADGEN", NULL, 0, 0, 0 }
         }
     },
     {
-        "Titlekey Decrypt", 3,
+        "TITLEKEY", 3,
         {
-            { "Titlekey Decrypt (file)", NULL, 0, 0, 0 },
-            { "Titlekey Decrypt (NAND)", NULL, 0, 0, 0 },
-            { "Titlekey Decrypt (EMU)", NULL, 0, 1, 0 }
+            { "TITLEKEY DECRYPT (FILE)", NULL, 0, 0, 0 },
+            { "TITLEKEY DECRYPT (NAND)", NULL, 0, 0, 0 },
+            { "TITLEKEY DECRYPT (EMU)", NULL, 0, 1, 0 }
         }
     },
     {
-        "SysNAND Options", 8,
+        "SYSNAND", 8,
         {
-            { "NAND Backup", NULL, 0, 0, 0 },
-            { "NAND Restore", NULL, 1, 0, 0 },
-            { "Partition Dump...", NULL, 0, 0, 0 },
-            { "Partition Inject...", NULL, 1, 0, 0 },
-            { "File Dump...", NULL, 0, 0, 0 },
-            { "File Inject...", NULL, 1, 0, 0 },
-            { "Health&Safety Dump", NULL, 0, 0, 0 },
-            { "Health&Safety Inject", NULL, 1, 0, 0 }
+            { "NAND BACKUP", NULL, 0, 0, 0 },
+            { "NAND RESTORE", NULL, 1, 0, 0 },
+            { "PARTITION DUMP...", NULL, 0, 0, 0 },
+            { "PARTITION INJECT...", NULL, 1, 0, 0 },
+            { "FILE DUMP...", NULL, 0, 0, 0 },
+            { "FILE INJECT...", NULL, 1, 0, 0 },
+            { "HEALTH&SAFETY DUMP", NULL, 0, 0, 0 },
+            { "HEALTH&SAFETY INJECT", NULL, 1, 0, 0 }
         }
     },
     {
-        "EmuNAND Options", 9,
+        "EMUNAND", 9,
         {
-            { "EmuNAND Backup", NULL, 0, 1, 0 },
-            { "EmuNAND Restore", NULL, 1, 1, 0 },
-            { "Partition Dump...", NULL, 0, 1, 0 },
-            { "Partition Inject...", NULL, 1, 1, 0 },
-            { "File Dump...", NULL, 0, 1, 0 },
-            { "File Inject...", NULL, 1, 1, 0 },
-            { "Health&Safety Dump", NULL, 0, 1, 0 },
-            { "Health&Safety Inject", NULL, 1, 1, 0 },
-            { "Update SeedDB", NULL, 0, 1, 0 }
+            { "EMUNAND BACKUP", NULL, 0, 1, 0 },
+            { "EMUNAND RESTORE", NULL, 1, 1, 0 },
+            { "PARTITION DUMP...", NULL, 0, 1, 0 },
+            { "PARTITION INJECT...", NULL, 1, 1, 0 },
+            { "FILE DUMP...", NULL, 0, 1, 0 },
+            { "FILE INJECT...", NULL, 1, 1, 0 },
+            { "HEALTH&SAFETY DUMP", NULL, 0, 1, 0 },
+            { "HEALTH&SAFETY INJECT", NULL, 1, 1, 0 },
+            { "UPDATE SEEDDB", NULL, 0, 1, 0 }
         }
     },
     {
-        "Game Decryptor", 6,
+        "GAME", 6,
         {
-            { "NCCH/NCSD Decryptor", NULL, 0, 0, 0 },
-            { "NCCH/NCSD Encryptor", NULL, 0, 0, 0 },
-            { "CIA Decryptor (shallow)", NULL, 0, 0, 0 },
-            { "CIA Decryptor (deep)", NULL, 0, 0, 0 },
-            { "CIA Decryptor (for GW)", NULL, 0, 0, 0 },
-            { "SD Decryptor/Encryptor", NULL, 0, 0, 0 }
+            { "NCCH/NCSD DECRYPTOR", NULL, 0, 0, 0 },
+            { "NCCH/NCSD ENCRYPTOR", NULL, 0, 0, 0 },
+            { "CIA DECRYPTOR (SHALLOW)", NULL, 0, 0, 0 },
+            { "CIA DECRYPTOR (DEEP)", NULL, 0, 0, 0 },
+            { "CIA DECRYPTOR (FOR GW)", NULL, 0, 0, 0 },
+            { "SD DECRYPTOR/ENCRYPTOR", NULL, 0, 0, 0 }
         }
     },
     // everything below is not contained in the main menu
     {
-        "Partition Dump... (SysNAND)", 6, // ID 0
+        "PARTITION DUMP... (SYSNAND)", 6, // ID 0
         {
             { "Dump TWLN Partition", NULL, 0, 0, 0 },
             { "Dump TWLP Partition", NULL, 0, 0, 0 },
@@ -87,7 +87,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "Partition Dump...(EmuNAND)", 6, // ID 1
+        "PARTITION DUMP...(EMUNAND)", 6, // ID 1
         {
             { "Dump TWLN Partition", NULL, 0, 1, 0 },
             { "Dump TWLP Partition", NULL, 0, 1, 0 },
@@ -98,7 +98,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "Partition Inject... (SysNAND)", 6, // ID 2
+        "PARTITION INJECT... (SYSNAND)", 6, // ID 2
         {
             { "Inject TWLN Partition", NULL, 1, 0, 0 },
             { "Inject TWLP Partition", NULL, 1, 0, 0 },
@@ -109,7 +109,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "Partition Inject... (EmuNAND)", 6, // ID 3
+        "PARTITION INJECT... (EMUNAND)", 6, // ID 3
         {
             { "Inject TWLN Partition", NULL, 1, 1, 0 },
             { "Inject TWLP Partition", NULL, 1, 1, 0 },
@@ -120,7 +120,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "File Dump... (SysNAND)", 8, // ID 4
+        "FILE DUMP... (SYSNAND)", 8, // ID 4
         {
             { "Dump ticket.db", NULL, 0, 0, 0 },
             { "Dump title.db", NULL, 0, 0, 0 },
@@ -133,7 +133,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "File Dump... (EmuNAND)", 9, // ID 5
+        "FILE DUMP... (EMUNAND)", 9, // ID 5
         {
             { "Dump ticket.db", NULL, 0, 1, 0 },
             { "Dump title.db", NULL, 0, 1, 0 },
@@ -147,7 +147,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "File Inject... (SysNAND)", 8, // ID 6
+        "FILE INJECT... (SYSNAND)", 8, // ID 6
         {
             { "Inject ticket.db", NULL, 1, 0, 0 },
             { "Inject title.db", NULL, 1, 0, 0 },
@@ -160,7 +160,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "File Inject... (EmuNAND)", 9, // ID 7
+        "FILE INJECT... (EMUNAND)", 9, // ID 7
         {
             { "Inject ticket.db", NULL, 1, 1, 0 },
             { "Inject title.db", NULL, 1, 1, 0 },

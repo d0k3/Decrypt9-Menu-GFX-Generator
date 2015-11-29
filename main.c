@@ -17,7 +17,7 @@
 #define entry_active_color "#00B7FF"
 #define entry_inactive_color "#006E99"
 
-#define menu_dist_x 26
+#define menu_dist_x 36
 #define menu_start_y 10
 
 #define menu_font "Roboto-Bold.ttf"
