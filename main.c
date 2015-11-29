@@ -1,7 +1,8 @@
 #include "common.h"
 #include "d9menu.h"
 
-#define base_gfx "base_bot.png"
+#define base_gfx_main "base_bot.png"
+#define base_gfx_sub "base_sub.png"
 #define entry_active_gfx "entry_active.png"
 // #define entry_inactive_gfx "entry_inactive.png"
 
@@ -75,7 +76,11 @@ int main()
     for (u32 idx_m = 0; menu[idx_m].name != NULL; idx_m++) {
         for (u32 idx_s = 0; idx_s < menu[idx_m].n_entries; idx_s++) {
             // insert entry texts
-            printf( "convert %s ", base_gfx );
+            #ifdef base_gfx_sub
+            printf( "convert %s ", (idx_m < SUBMENU_START) ? base_gfx_main : base_gfx_sub );
+            #else
+            printf( "convert %s ", base_gfx_main );
+            #endif
             for (u32 i = 0; i < menu[idx_m].n_entries; i++) {
                 #ifdef entry_active_gfx
                 if (idx_s == i) {
