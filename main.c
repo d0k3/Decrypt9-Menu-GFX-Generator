@@ -17,16 +17,16 @@
 
 #define entry_font "Roboto-Bold.ttf"
 #define entry_font_size 11
-#define entry_active_color "White"
-#define entry_inactive_color "Blue"
+#define entry_active_color "#00B7FF"
+#define entry_inactive_color "#006E99"
 
 #define menu_dist_x 26
 #define menu_start_y 10
 
 #define menu_font "Roboto-Bold.ttf"
-#define menu_font_size 12
-#define menu_active_color "White"
-#define menu_inactive_color "Blue"
+#define menu_font_size 11
+#define menu_active_color "#00B7FF"
+#define menu_inactive_color "#006E99"
 
 #define desc_dim_x 130
 #define desc_dim_y 150
@@ -35,8 +35,8 @@
 #define desc_start_y 50
 
 #define desc_font "Roboto-Bold.ttf"
-#define desc_font_size 11
-#define desc_color "Blue"
+#define desc_font_size 12
+#define desc_color "#006E99"
 
 int main()
 {
