@@ -15,10 +15,8 @@
 #define entry_step_x 0
 #define entry_step_y 15
 
-#define menu_start_x 20
-#define menu_start_y 20
-#define menu_step_x 100
-#define menu_step_y 0
+#define menu_dist_x 26
+#define menu_start_y 10
 
 #define entry_font "Roboto-Bold.ttf"
 #define entry_font_size 11
@@ -37,7 +35,7 @@ int main()
     printf("set BUILD=build\n");
     printf("set OUTPUT=output\n");
     printf("if not exist %%BUILD%% md %%BUILD%%\n");
-    printf("if not exist %%OUTPUT%% md %%OUTPUT%%\n\n");
+    printf("if not exist %%OUTPUT%% md %%OUTPUT%%\n");
     
     // create base GFX
     #ifdef entry_active_gfx
@@ -79,16 +77,15 @@ int main()
             }
             // create menu nav text
             if (idx_m < SUBMENU_START) {
-                u32 idx_m_lr[2];
-                idx_m_lr[0] = (idx_m > 0) ? idx_m - 1 : SUBMENU_START - 1;
-                idx_m_lr[1] = (idx_m < SUBMENU_START - 1) ? idx_m + 1 : 0;
-                for (u32 i = 0; i < 2; i++) {
-                    printf( "-draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_0.png\" ",
-                        menu_start_x + i * 2 * menu_step_x, menu_start_y + i * 2 * menu_step_y, idx_m_lr[i] );
-                }
+                u32 idx_m_l = (idx_m > 0) ? idx_m - 1 : SUBMENU_START - 1;
+                u32 idx_m_r = (idx_m < SUBMENU_START - 1) ? idx_m + 1 : 0;
+                printf( "-gravity NorthWest -draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_0.png\" ",
+                    menu_dist_x, menu_start_y, idx_m_l );
+                printf( "-gravity NorthEast -draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_0.png\" ",
+                    menu_dist_x, menu_start_y, idx_m_r );
             }
-            printf( "-draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_1.png\" ",
-                menu_start_x + menu_step_x, menu_start_y + menu_step_y, idx_m );
+            printf( "-gravity North -draw \"image over 0,%i 0,0 %%BUILD%%/mlabel%02i_1.png\" ",
+                menu_start_y, idx_m );
             printf( "%%OUTPUT%%/menu%04i.png\n", (idx_m * 100) + idx_s );
         }
     }
