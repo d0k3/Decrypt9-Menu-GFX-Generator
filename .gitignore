@@ -1,4 +1,6 @@
 *.exe
 exec.bat
-/output
+
 /backup
+/build
+/output
