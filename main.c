@@ -48,7 +48,7 @@ int main()
         for (u32 idx_s = 0; idx_s < menu[idx_m].n_entries; idx_s++) {
             for (u32 i = 0; i < menu[idx_m].n_entries; i++) {
                 printf( "convert -background transparent -font %s -pointsize %i ", entry_font, entry_font_size );
-                printf( "-fill %s label:'%s' \"Images/%s_%s.png\" \n",
+                printf( "-fill %s label:' %s' \"Images/%s_%s.png\" \n",
                 (idx_s == i) ? entry_active_color : entry_inactive_color,
                 menu[idx_m].entries[i].name, menu[idx_m].entries[i].name, (idx_s == i) ? entry_active_color : entry_inactive_color);
                 if (idx_m < SUBMENU_START) {
@@ -58,7 +58,7 @@ int main()
                     menu_nav[2] = menu[(idx_m < SUBMENU_START - 1) ? idx_m + 1 : 0].name;
                     for (u32 i = 0; i < 3; i++) {
                         printf( "convert -background transparent -font %s -pointsize %i ", entry_font, entry_font_size );
-                        printf( "-fill %s label:'%s' \"Images/%s_%s.png\"\n",
+                        printf( "-fill %s label:' %s' \"Images/%s_%s.png\"\n",
                             (i == 1) ? menu_active_color : menu_inactive_color,
                             menu_nav[i], 
                             (i == 1) ? menu_active_color : menu_inactive_color, 
