@@ -15,18 +15,28 @@
 #define entry_step_x 0
 #define entry_step_y 15
 
-#define menu_dist_x 26
-#define menu_start_y 10
-
 #define entry_font "Roboto-Bold.ttf"
 #define entry_font_size 11
 #define entry_active_color "White"
 #define entry_inactive_color "Blue"
 
+#define menu_dist_x 26
+#define menu_start_y 10
+
 #define menu_font "Roboto-Bold.ttf"
 #define menu_font_size 12
 #define menu_active_color "White"
 #define menu_inactive_color "Blue"
+
+#define desc_dim_x 130
+#define desc_dim_y 150
+#define desc_gravity "SouthWest"
+#define desc_start_x 180
+#define desc_start_y 50
+
+#define desc_font "Roboto-Bold.ttf"
+#define desc_font_size 11
+#define desc_color "Blue"
 
 int main()
 {
@@ -56,7 +66,14 @@ int main()
                     (a == 1) ? entry_active_color : entry_inactive_color,
                     menu[idx_m].entries[idx_s].name, (idx_m * 100) + idx_s, a);
             }
+            if (menu[idx_m].entries[idx_s].desc != NULL) {
+                printf( "convert -background transparent -font %s -pointsize %i ", desc_font, desc_font_size );
+                printf( "-fill %s -size %ix%i -gravity %s \"caption:%s\" %%BUILD%%/desc%04i.png\n",
+                    desc_color, desc_dim_x, desc_dim_y, desc_gravity,
+                    menu[idx_m].entries[idx_s].desc, (idx_m * 100) + idx_s);
+            }
         }
+        
         for (u32 a = 0; a < 2; a++) {
             printf( "convert -background transparent -font %s -pointsize %i ", menu_font, menu_font_size );
             printf( "-fill %s \"label:%s\" %%BUILD%%/mlabel%02i_%i.png\n",
@@ -69,13 +86,19 @@ int main()
     printf("\n");
     for (u32 idx_m = 0; menu[idx_m].name != NULL; idx_m++) {
         for (u32 idx_s = 0; idx_s < menu[idx_m].n_entries; idx_s++) {
+            // insert entry texts
             printf( "convert %%BUILD%%/base%02i.png ", idx_s );
             for (u32 i = 0; i < menu[idx_m].n_entries; i++) {
                 printf( "-draw \"image over %i,%i 0,0 %%BUILD%%/label%04i_%i.png\" ",
                     entry_start_x + i * entry_step_x, entry_start_y + i * entry_step_y,
                     (idx_m * 100) + i, (idx_s == i) ? 1 : 0);
             }
-            // create menu nav text
+            // (if available) insert description text
+            if (menu[idx_m].entries[idx_s].desc != NULL) {
+                printf( "-draw \"image over %i,%i 0,0 %%BUILD%%/desc%04i.png\" ",
+                    desc_start_x, desc_start_y, (idx_m * 100) + idx_s);
+            }
+            // insert menu nav text
             if (idx_m < SUBMENU_START) {
                 u32 idx_m_l = (idx_m > 0) ? idx_m - 1 : SUBMENU_START - 1;
                 u32 idx_m_r = (idx_m < SUBMENU_START - 1) ? idx_m + 1 : 0;

@@ -5,7 +5,7 @@
 
 typedef struct {
     char* name;
-    u32 (*function)(u32 param);
+    char* desc;
     u32 dangerous;
     u32 emunand;
     u32 param;
@@ -22,7 +22,7 @@ MenuInfo menu[] =
     {
         "XORpad Generator", 4,
         {
-            { "NCCH Padgen", NULL, 0, 0, 0 },
+            { "NCCH Padgen", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", 0, 0, 0 },
             { "SD Padgen", NULL, 0, 0, 0 },
             { "CTRNAND Padgen", NULL, 0, 0, 0 },
             { "TWLNAND Padgen", NULL, 0, 0, 0 }
