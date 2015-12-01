@@ -15,8 +15,8 @@
 
 #define entry_font "Roboto-Bold.ttf"
 #define entry_font_size 11
-#define entry_font_kerning 1
-#define entry_font_strokewidth 0
+#define entry_font_kerning 1.0
+#define entry_font_strokewidth 0.5
 #define entry_active_color "#00B7FF"
 #define entry_active_color_stroke "#00B7FF00"
 #define entry_inactive_color "#006E99"
@@ -27,8 +27,8 @@
 
 #define menu_font "Roboto-Bold.ttf"
 #define menu_font_size 11
-#define menu_font_kerning 1 
-#define menu_font_strokewidth 0
+#define menu_font_kerning 1.0
+#define menu_font_strokewidth 0.5
 #define menu_active_color "#00B7FF"
 #define menu_active_color_stroke "#00B7FF00"
 #define menu_inactive_color "#006E99"
@@ -41,8 +41,8 @@
 
 #define desc_font "Roboto-Bold.ttf"
 #define desc_font_size 12
-#define desc_font_kerning 1
-#define desc_font_strokewidth 0
+#define desc_font_kerning 1.0
+#define desc_font_strokewidth 0.5
 #define desc_color "#006E99"
 #define desc_color_stroke "#006E9900"
 #define desc_gravity "SouthWest"
@@ -62,7 +62,7 @@ int main()
         for (u32 idx_s = 0; idx_s < menu[idx_m].n_entries; idx_s++) {
             for (u32 a = 0; a < 2; a++) {
                 printf( "convert -background transparent -font %s -pointsize %i ", entry_font, entry_font_size );
-                printf( "-fill %s -stroke %s -strokewidth %i -kerning %i \"label:%s\" %%BUILD%%/label%04i_%i.png\n",
+                printf( "-fill %s -stroke %s -strokewidth %f -kerning %f \"label:%s\" %%BUILD%%/label%04i_%i.png\n",
                     (a == 1) ? entry_active_color : entry_inactive_color,
                     (a == 1) ? entry_active_color_stroke : entry_inactive_color_stroke,
                     menu_font_strokewidth, menu_font_kerning,
@@ -70,16 +70,16 @@ int main()
             }
             if (menu[idx_m].entries[idx_s].desc != NULL) {
                 printf( "convert -background transparent -font %s -pointsize %i ", desc_font, desc_font_size );
-                printf( "-fill %s -stroke %s -strokewidth %i -kerning %i -size %ix%i -gravity %s \"caption:%s\" %%BUILD%%/desc%04i.png\n",
+                printf( "-fill %s -stroke %s -strokewidth %f -kerning %f -size %ix%i -gravity %s \"caption:%s\" %%BUILD%%/desc%04i.png\n",
                     desc_color, desc_color_stroke, desc_font_strokewidth, desc_font_kerning, 
                     desc_dim_x, desc_dim_y, desc_gravity,
                     menu[idx_m].entries[idx_s].desc, (idx_m * 100) + idx_s);
             }
         }
-        
+
         for (u32 a = 0; a < 2; a++) {
             printf( "convert -background transparent -font %s -pointsize %i ", menu_font, menu_font_size );
-            printf( "-fill %s -stroke %s -strokewidth %i -kerning %i \"label:%s\" %%BUILD%%/mlabel%02i_%i.png\n",
+            printf( "-fill %s -stroke %s -strokewidth %f -kerning %f \"label:%s\" %%BUILD%%/mlabel%02i_%i.png\n",
                 (a == 1) ? menu_active_color : menu_inactive_color,
                 (a == 1) ? menu_active_color_stroke : menu_inactive_color_stroke,
                 menu_font_strokewidth, menu_font_kerning,
