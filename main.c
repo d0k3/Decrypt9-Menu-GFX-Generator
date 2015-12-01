@@ -70,7 +70,7 @@ int main()
             }
             if (menu[idx_m].entries[idx_s].desc != NULL) {
                 printf( "convert -background transparent -font %s -pointsize %i ", desc_font, desc_font_size );
-                printf( "-fill %s -stroke %s -strokewidth %i kerning %i -size %ix%i -gravity %s \"caption:%s\" %%BUILD%%/desc%04i.png\n",
+                printf( "-fill %s -stroke %s -strokewidth %i -kerning %i -size %ix%i -gravity %s \"caption:%s\" %%BUILD%%/desc%04i.png\n",
                     desc_color, desc_color_stroke, desc_font_strokewidth, desc_font_kerning, 
                     desc_dim_x, desc_dim_y, desc_gravity,
                     menu[idx_m].entries[idx_s].desc, (idx_m * 100) + idx_s);
