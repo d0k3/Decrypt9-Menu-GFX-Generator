@@ -15,7 +15,7 @@
 
 #define entry_font "Roboto-Bold.ttf"
 #define entry_font_size 11
-#define entry_font_kerning 1.0
+#define entry_font_kerning 0.2
 #define entry_font_strokewidth 0.5
 #define entry_active_color "#00B7FF"
 #define entry_active_color_stroke "#00B7FF00"
@@ -27,7 +27,7 @@
 
 #define menu_font "Roboto-Bold.ttf"
 #define menu_font_size 11
-#define menu_font_kerning 1.0
+#define menu_font_kerning 0.2
 #define menu_font_strokewidth 0.5
 #define menu_active_color "#00B7FF"
 #define menu_active_color_stroke "#00B7FF00"
@@ -41,7 +41,7 @@
 
 #define desc_font "Roboto-Bold.ttf"
 #define desc_font_size 12
-#define desc_font_kerning 1.0
+#define desc_font_kerning 0.2
 #define desc_font_strokewidth 0.5
 #define desc_color "#006E99"
 #define desc_color_stroke "#006E9900"
