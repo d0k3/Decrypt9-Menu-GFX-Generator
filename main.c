@@ -23,7 +23,7 @@
 #define entry_inactive_color_stroke "#006E9900"
 
 #define menu_dist_x 36
-#define menu_start_y 10
+#define menu_start_y 9
 
 #define menu_font "Roboto-Bold.ttf"
 #define menu_font_size 11
@@ -129,7 +129,7 @@ int main()
                 printf( "-gravity NorthWest -draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_0.png\" ",
                     menu_dist_x, menu_start_y, idx_m_l );
                 printf( "-gravity NorthEast -draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_0.png\" ",
-                    menu_dist_x, menu_start_y, idx_m_r );
+                    (menu_dist_x + 2), menu_start_y, idx_m_r );
             }
             printf( "-gravity North -draw \"image over 0,%i 0,0 %%BUILD%%/mlabel%02i_1.png\" ",
                 menu_start_y, idx_m );
