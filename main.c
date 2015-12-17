@@ -95,7 +95,7 @@ int main()
         for (u32 idx_s = 0; idx_s < menu[idx_m].n_entries; idx_s++) {
             // insert entry texts
             #ifdef base_gfx_sub
-            printf( "convert %s ", (idx_m < SUBMENU_START) ? base_gfx_main : base_gfx_sub );
+            printf( "convert %s ", ((idx_m < SUBMENU_START) && (SUBMENU_START > 1)) ? base_gfx_main : base_gfx_sub );
             #else
             printf( "convert %s ", base_gfx_main );
             #endif
@@ -124,7 +124,7 @@ int main()
                     desc_start_x, desc_start_y, (idx_m * 100) + idx_s);
             }
             // insert menu nav text
-            if (idx_m < SUBMENU_START) {
+            if ((idx_m < SUBMENU_START) && (SUBMENU_START > 1)) {
                 u32 idx_m_l = (idx_m > 0) ? idx_m - 1 : SUBMENU_START - 1;
                 u32 idx_m_r = (idx_m < SUBMENU_START - 1) ? idx_m + 1 : 0;
                 printf( "-gravity NorthWest -draw \"image over %i,%i 0,0 %%BUILD%%/mlabel%02i_0.png\" ",
