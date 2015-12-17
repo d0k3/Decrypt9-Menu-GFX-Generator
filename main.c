@@ -1,5 +1,6 @@
 #include "common.h"
-#include "d9menu.h"
+// #include "d9menu.h"
+#include "ed9menu.h"
 
 #define base_gfx_main "base_bot.png"
 #define base_gfx_sub "base_sub.png"
