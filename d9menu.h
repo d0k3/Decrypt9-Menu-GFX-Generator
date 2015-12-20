@@ -128,7 +128,7 @@ MenuInfo menu[] =
             { "Dump LocalFriendCodeSeed_B", NULL, 0 },
             { "Dump rand_seed", NULL, 0 },
             { "Dump movable.sed", NULL, 0 },
-			{ "Dump updtsave.bin", NULL, 0 }
+            { "Dump updtsave.bin", NULL, 0 }
         }
     },
     {
@@ -143,7 +143,7 @@ MenuInfo menu[] =
             { "Dump rand_seed", NULL, 0 },
             { "Dump movable.sed", NULL, 0 },
             { "Dump seedsave.bin", NULL, 0 },
-			{ "Dump updtsave.bin", NULL, 0 }
+            { "Dump updtsave.bin", NULL, 0 }
         }
     },
     {
@@ -157,7 +157,7 @@ MenuInfo menu[] =
             { "Inject LocalFriendCodeSeed_B", NULL, 0 },
             { "Inject rand_seed", NULL, 0 },
             { "Inject movable.sed", NULL, 0 },
-			{ "Inject updtsave.bin", NULL, 0 }
+            { "Inject updtsave.bin", NULL, 0 }
         }
     },
     {
@@ -172,7 +172,7 @@ MenuInfo menu[] =
             { "Inject rand_seed", NULL, 0 },
             { "Inject movable.sed", NULL, 0 },
             { "Inject seedsave.bin", NULL, 0 },
-			{ "Inject updtsave.bin", NULL, 0 }
+            { "Inject updtsave.bin", NULL, 0 }
         }
     },
     {
