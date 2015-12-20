@@ -118,20 +118,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "FILE DUMP... (SYSNAND)", 8, // ID 4
-        {
-            { "Dump ticket.db", NULL, 0 },
-            { "Dump title.db", NULL, 0 },
-            { "Dump import.db", NULL, 0 },
-            { "Dump certs.db", NULL, 0 },
-            { "Dump SecureInfo_A", NULL, 0 },
-            { "Dump LocalFriendCodeSeed_B", NULL, 0 },
-            { "Dump rand_seed", NULL, 0 },
-            { "Dump movable.sed", NULL, 0 }
-        }
-    },
-    {
-        "FILE DUMP... (EMUNAND)", 9, // ID 5
+        "FILE DUMP... (SYSNAND)", 9, // ID 4
         {
             { "Dump ticket.db", NULL, 0 },
             { "Dump title.db", NULL, 0 },
@@ -141,24 +128,26 @@ MenuInfo menu[] =
             { "Dump LocalFriendCodeSeed_B", NULL, 0 },
             { "Dump rand_seed", NULL, 0 },
             { "Dump movable.sed", NULL, 0 },
-            { "Dump seedsave.bin", NULL, 0 }
+			{ "Dump updtsave.bin", NULL, 0 }
         }
     },
     {
-        "FILE INJECT... (SYSNAND)", 8, // ID 6
+        "FILE DUMP... (EMUNAND)", 10, // ID 5
         {
-            { "Inject ticket.db", NULL, 0 },
-            { "Inject title.db", NULL, 0 },
-            { "Inject import.db", NULL, 0 },
-            { "Inject certs.db", NULL, 0 },
-            { "Inject SecureInfo_A", NULL, 0 },
-            { "Inject LocalFriendCodeSeed_B", NULL, 0 },
-            { "Inject rand_seed", NULL, 0 },
-            { "Inject movable.sed", NULL, 0 }
+            { "Dump ticket.db", NULL, 0 },
+            { "Dump title.db", NULL, 0 },
+            { "Dump import.db", NULL, 0 },
+            { "Dump certs.db", NULL, 0 },
+            { "Dump SecureInfo_A", NULL, 0 },
+            { "Dump LocalFriendCodeSeed_B", NULL, 0 },
+            { "Dump rand_seed", NULL, 0 },
+            { "Dump movable.sed", NULL, 0 },
+            { "Dump seedsave.bin", NULL, 0 },
+			{ "Dump updtsave.bin", NULL, 0 }
         }
     },
     {
-        "FILE INJECT... (EMUNAND)", 9, // ID 7
+        "FILE INJECT... (SYSNAND)", 9, // ID 6
         {
             { "Inject ticket.db", NULL, 0 },
             { "Inject title.db", NULL, 0 },
@@ -168,7 +157,22 @@ MenuInfo menu[] =
             { "Inject LocalFriendCodeSeed_B", NULL, 0 },
             { "Inject rand_seed", NULL, 0 },
             { "Inject movable.sed", NULL, 0 },
-            { "Inject seedsave.bin", NULL, 0 }
+			{ "Inject updtsave.bin", NULL, 0 }
+        }
+    },
+    {
+        "FILE INJECT... (EMUNAND)", 10, // ID 7
+        {
+            { "Inject ticket.db", NULL, 0 },
+            { "Inject title.db", NULL, 0 },
+            { "Inject import.db", NULL, 0 },
+            { "Inject certs.db", NULL, 0 },
+            { "Inject SecureInfo_A", NULL, 0 },
+            { "Inject LocalFriendCodeSeed_B", NULL, 0 },
+            { "Inject rand_seed", NULL, 0 },
+            { "Inject movable.sed", NULL, 0 },
+            { "Inject seedsave.bin", NULL, 0 },
+			{ "Inject updtsave.bin", NULL, 0 }
         }
     },
     {

@@ -1,6 +1,6 @@
 #include "common.h"
-// #include "d9menu.h"
-#include "ed9menu.h"
+#include "d9menu.h"
+//#include "ed9menu.h"
 
 #define base_gfx_main "base_bot.png"
 #define base_gfx_sub "base_sub.png"
@@ -24,7 +24,7 @@
 #define entry_inactive_color_stroke "#006E9900"
 
 #define menu_dist_x 36
-#define menu_start_y 9
+#define menu_start_y 10
 
 #define menu_font "Roboto-Bold.ttf"
 #define menu_font_size 11
