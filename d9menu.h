@@ -20,159 +20,159 @@ MenuInfo menu[] =
     {
         "XORPAD", 4,
         {
-            { "NCCH PADGEN", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", 0 },
-            { "SD PADGEN", NULL, 0 },
-            { "CTRNAND PADGEN", NULL, 0 },
-            { "TWLNAND PADGEN", NULL, 0 }
+            { "NCCH PADGEN", "Generate the xorpads needed to decrypt and encrypt 3ds titles.", 0 },
+            { "SD PADGEN", "Generate the xorpads needed to decrypt and encrypt SD card contents.", 0 },
+            { "CTRNAND PADGEN", "Generate the xorpads needed to decrypt and encrypt your main nand partition.", 0 },
+            { "TWLNAND PADGEN", "Generate the xorpads needed to decrypt and encrypt your TWL nand partition.", 0 }
         }
     },
     {
         "TITLEKEY", 3,
         {
-            { "TITLEKEY DECRYPT (FILE)", NULL, 0 },
-            { "TITLEKEY DECRYPT (NAND)", NULL, 0 },
-            { "TITLEKEY DECRYPT (EMU)", NULL, 0 }
+            { "TITLEKEY DECRYPT (FILE)", "Decrypt the title keys stored in encTitleKeys.bin.", 0 },
+            { "TITLEKEY DECRYPT (NAND)", "Decrypt the title keys stored in sysnand to decTitleKeys.bin.", 0 },
+            { "TITLEKEY DECRYPT (EMU)", "Decrypt the title keys stored in Emunand to decTitleKeys_emu.bin.", 0 }
         }
     },
     {
         "SYSNAND", 8,
         {
-            { "NAND BACKUP", NULL, 0 },
-            { "NAND RESTORE", NULL, 0 },
-            { "PARTITION DUMP...", NULL, 0 },
-            { "PARTITION INJECT...", NULL, 0 },
-            { "FILE DUMP...", NULL, 0 },
-            { "FILE INJECT...", NULL, 0 },
-            { "HEALTH&SAFETY DUMP", NULL, 0 },
-            { "HEALTH&SAFETY INJECT", NULL, 0 }
+            { "NAND BACKUP", "Backup your sysnand. It is highly recommended to backup your sysnand", 0 },
+            { "NAND RESTORE", "Restore your sysnand backup. Proceed with caution!!", 0 },
+            { "PARTITION DUMP...", "Backup selected partitions from sysnand.", 0 },
+            { "PARTITION INJECT...", "Inject selected partitions into sysnand.", 0 },
+            { "FILE DUMP...", "Backup selected files from sysnand.", 0 },
+            { "FILE INJECT...", "Inject selected files into sysnand.", 0 },
+            { "HEALTH&SAFETY DUMP", "Backup the health and safety app from sysnand.", 0 },
+            { "HEALTH&SAFETY INJECT", "Inject the health and safety app into sysnand.", 0 }
         }
     },
     {
         "EMUNAND", 9,
         {
-            { "EMUNAND BACKUP", NULL, 0 },
-            { "EMUNAND RESTORE", NULL, 0 },
-            { "PARTITION DUMP...", NULL, 0 },
-            { "PARTITION INJECT...", NULL, 0 },
-            { "FILE DUMP...", NULL, 0 },
-            { "FILE INJECT...", NULL, 0 },
-            { "HEALTH&SAFETY DUMP", NULL, 0 },
-            { "HEALTH&SAFETY INJECT", NULL, 0 },
-            { "UPDATE SEEDDB", NULL, 0 }
+            { "EMUNAND BACKUP", "Backup your emunand. It is highly recommended to backup your emunand.", 0 },
+            { "EMUNAND RESTORE", "Restore your emunand backup. Proceed with caution!!", 0 },
+            { "PARTITION DUMP...", "Backup selected partitions from emunand.", 0 },
+            { "PARTITION INJECT...", "Inject selected partitions into emunand.", 0 },
+            { "FILE DUMP...", "Backup selected files from emunand.", 0 },
+            { "FILE INJECT...", "Inject selected files into emunand.", 0 },
+            { "HEALTH&SAFETY DUMP", "Backup the health and safety app from emunand.", 0 },
+            { "HEALTH&SAFETY INJECT", "Inject the health and safety app into emunand.", 0 },
+            { "UPDATE SEEDDB", "Dump Seeddb.bin from Emunand. OLD 3DS 9.6+ ONLY FOR NOW...", 0 }
         }
     },
     {
         "GAME", 6,
         {
-            { "NCCH/NCSD DECRYPTOR", NULL, 0 },
-            { "NCCH/NCSD ENCRYPTOR", NULL, 0 },
-            { "CIA DECRYPTOR (SHALLOW)", NULL, 0 },
-            { "CIA DECRYPTOR (DEEP)", NULL, 0 },
-            { "CIA DECRYPTOR (FOR GW)", NULL, 0 },
-            { "SD DECRYPTOR/ENCRYPTOR", NULL, 0 }
+            { "NCCH/NCSD DECRYPTOR", "Fully decrypt all NCCH/NCSD files in work or game folder. Files with .3DS and .APP extension belong into this category.", 0 },
+            { "NCCH/NCSD ENCRYPTOR", "(Re-)Encrypt NCCH/NCSD files with standard compression. On some hardware this might be needed for compatibility.", 0 },
+            { "CIA DECRYPTOR (SHALLOW)", "Decrypt the first layer of CIA encryption, but leave the internal NCCH encryption untouched. This processes all CIAs in work / game folder.", 0 },
+            { "CIA DECRYPTOR (DEEP)", "Fully decrypt all CIA files in work / game folder.", 0 },
+            { "CIA DECRYPTOR (CXI only)", "Decrypt all CIA files in work / game folder, but leave everything but the CXI untouched. On some hardware this might be needed for compatibility.", 0 },
+            { "SD DECRYPTOR/ENCRYPTOR", "Decrypt or encrypt the SD files inside your work / game folder. You first need to copy the folder structure from /Nintendo 3DS/<id0>/<id1>", 0 }
         }
     },
     // everything below is not contained in the main menu
     {
         "PARTITION DUMP... (SYSNAND)", 6, // ID 0
         {
-            { "Dump TWLN Partition", NULL, 0 },
-            { "Dump TWLP Partition", NULL, 0 },
-            { "Dump AGBSAVE Partition", NULL, 0 },
-            { "Dump FIRM0 Partition", NULL, 0 },
-            { "Dump FIRM1 Partition", NULL, 0 },
-            { "Dump CTRNAND Partition", NULL, 0 }
+            { "Dump TWLN Partition", "Backup the TWL main partition.", 0 },
+            { "Dump TWLP Partition", "Backup the TWL photo partition.", 0 },
+            { "Dump AGBSAVE Partition", "Backup the Agbsave partition.", 0 },
+            { "Dump FIRM0 Partition", "Backup the FIRM0 partition.", 0 },
+            { "Dump FIRM1 Partition", "Backup the FIRM1 partition.", 0 },
+            { "Dump CTRNAND Partition", "Backup the sysnand main partition.", 0 }
         }
     },
     {
         "PARTITION DUMP...(EMUNAND)", 6, // ID 1
         {
-            { "Dump TWLN Partition", NULL, 0 },
-            { "Dump TWLP Partition", NULL, 0 },
-            { "Dump AGBSAVE Partition", NULL, 0 },
-            { "Dump FIRM0 Partition", NULL, 0 },
-            { "Dump FIRM1 Partition", NULL, 0 },
-            { "Dump CTRNAND Partition", NULL, 0 }
+            { "Dump TWLN Partition", "Backup the TWL main partition.", 0 },
+            { "Dump TWLP Partition", "Backup the TWL photo partition.", 0 },
+            { "Dump AGBSAVE Partition", "Backup the Agbsave partition.", 0 },
+            { "Dump FIRM0 Partition", "Backup the FIRM0 partition.", 0 },
+            { "Dump FIRM1 Partition", "Backup the FIRM1 partition.", 0 },
+            { "Dump CTRNAND Partition", "Backup the emunand main partition.", 0 }
         }
     },
     {
         "PARTITION INJECT... (SYSNAND)", 6, // ID 2
         {
-            { "Inject TWLN Partition", NULL, 0 },
-            { "Inject TWLP Partition", NULL, 0 },
-            { "Inject AGBSAVE Partition", NULL, 0 },
-            { "Inject FIRM0 Partition", NULL, 0 },
-            { "Inject FIRM1 Partition", NULL, 0 },
-            { "Inject CTRNAND Partition", NULL, 0 }
+            { "Inject TWLN Partition", "Inject the TWL main partition.", 0 },
+            { "Inject TWLP Partition", "Inject the TWL photo partition.", 0 },
+            { "Inject AGBSAVE Partition", "Inject the Agbsave partition.", 0 },
+            { "Inject FIRM0 Partition", "Inject the FIRM0 partition.", 0 },
+            { "Inject FIRM1 Partition", "Inject the FIRM1 partition.", 0 },
+            { "Inject CTRNAND Partition", "Inject the sysnand main partition.", 0 }
         }
     },
     {
         "PARTITION INJECT... (EMUNAND)", 6, // ID 3
         {
-            { "Inject TWLN Partition", NULL, 0 },
-            { "Inject TWLP Partition", NULL, 0 },
-            { "Inject AGBSAVE Partition", NULL, 0 },
-            { "Inject FIRM0 Partition", NULL, 0 },
-            { "Inject FIRM1 Partition", NULL, 0 },
-            { "Inject CTRNAND Partition", NULL, 0 }
+            { "Inject TWLN Partition", "Inject the TWL main partition.", 0 },
+            { "Inject TWLP Partition", "Inject the TWL photo partition.", 0 },
+            { "Inject AGBSAVE Partition", "Inject the Agbsave partition.", 0 },
+            { "Inject FIRM0 Partition", "Inject the FIRM0 partition.", 0 },
+            { "Inject FIRM1 Partition", "Inject the FIRM1 partition.", 0 },
+            { "Inject CTRNAND Partition", "Inject the emunand main partition.", 0 }
         }
     },
     {
         "FILE DUMP... (SYSNAND)", 9, // ID 4
         {
-            { "Dump ticket.db", NULL, 0 },
-            { "Dump title.db", NULL, 0 },
-            { "Dump import.db", NULL, 0 },
-            { "Dump certs.db", NULL, 0 },
-            { "Dump SecureInfo_A", NULL, 0 },
-            { "Dump LocalFriendCodeSeed_B", NULL, 0 },
-            { "Dump rand_seed", NULL, 0 },
-            { "Dump movable.sed", NULL, 0 },
-            { "Dump updtsave.bin", NULL, 0 }
+            { "Dump ticket.db", "Dump ticket.db from sysnand.", 0 },
+            { "Dump title.db", "Dump title.db from sysnand.", 0 },
+            { "Dump import.db", "Dump import.db from sysnand.", 0 },
+            { "Dump certs.db", "Dump certs.db from sysnand.", 0 },
+            { "Dump SecureInfo_A", "Dump SecureInfo_A from sysnand.", 0 },
+            { "Dump LocalFriendCodeSeed_B", "Dump Local_Friend Code_Seed_B from sysnand.", 0 },
+            { "Dump rand_seed", "Dump rand_seed from sysnand.", 0 },
+            { "Dump movable.sed", "Dump movable.sed from sysnand.", 0 },
+            { "Dump updtsave.bin", "Dump updtsave.bin from sysnand.", 0 }
         }
     },
     {
         "FILE DUMP... (EMUNAND)", 10, // ID 5
         {
-            { "Dump ticket.db", NULL, 0 },
-            { "Dump title.db", NULL, 0 },
-            { "Dump import.db", NULL, 0 },
-            { "Dump certs.db", NULL, 0 },
-            { "Dump SecureInfo_A", NULL, 0 },
-            { "Dump LocalFriendCodeSeed_B", NULL, 0 },
-            { "Dump rand_seed", NULL, 0 },
-            { "Dump movable.sed", NULL, 0 },
-            { "Dump seedsave.bin", NULL, 0 },
-            { "Dump updtsave.bin", NULL, 0 }
+            { "Dump ticket.db", "Dump ticket.db from emunand.", 0 },
+            { "Dump title.db", "Dump title.db from emunand.", 0 },
+            { "Dump import.db", "Dump import.db from emunand.", 0 },
+            { "Dump certs.db", "Dump certs.db from emunand.", 0 },
+            { "Dump SecureInfo_A", "Dump SecureInfo_A from emunand.", 0 },
+            { "Dump LocalFriendCodeSeed_B", "Dump Local_Friend Code_Seed_B from emunand.", 0 },
+            { "Dump rand_seed", "Dump rand_seed from emunand.", 0 },
+            { "Dump movable.sed", "Dump movable.sed from emunand.", 0 },
+            { "Dump seedsave.bin", "Dump seedsave.bin from emunand. OLD 3DS 9.6+ ONLY FOR NOW...", 0 },
+            { "Dump updtsave.bin", "Dump updtsave.bin from emunand.", 0 }
         }
     },
     {
         "FILE INJECT... (SYSNAND)", 9, // ID 6
         {
-            { "Inject ticket.db", NULL, 0 },
-            { "Inject title.db", NULL, 0 },
-            { "Inject import.db", NULL, 0 },
-            { "Inject certs.db", NULL, 0 },
-            { "Inject SecureInfo_A", NULL, 0 },
-            { "Inject LocalFriendCodeSeed_B", NULL, 0 },
-            { "Inject rand_seed", NULL, 0 },
-            { "Inject movable.sed", NULL, 0 },
-            { "Inject updtsave.bin", NULL, 0 }
+            { "Inject ticket.db", "Inject ticket.db into sysnand.", 0 },
+            { "Inject title.db", "Inject title.db into sysnand.", 0 },
+            { "Inject import.db", "Inject import.db into sysnand.", 0 },
+            { "Inject certs.db", "Inject certs.db into sysnand.", 0 },
+            { "Inject SecureInfo_A", "Inject SecureInfo_A into sysnand.", 0 },
+            { "Inject LocalFriendCodeSeed_B", "Inject Local_Friend Code_Seed_B into sysnand.", 0 },
+            { "Inject rand_seed", "Inject rand_seed into sysnand.", 0 },
+            { "Inject movable.sed", "Inject movable.sed into sysnand.", 0 },
+            { "Inject updtsave.bin", "Inject updtsave.bin into sysnand.", 0 }
         }
     },
     {
         "FILE INJECT... (EMUNAND)", 10, // ID 7
         {
-            { "Inject ticket.db", NULL, 0 },
-            { "Inject title.db", NULL, 0 },
-            { "Inject import.db", NULL, 0 },
-            { "Inject certs.db", NULL, 0 },
-            { "Inject SecureInfo_A", NULL, 0 },
-            { "Inject LocalFriendCodeSeed_B", NULL, 0 },
-            { "Inject rand_seed", NULL, 0 },
-            { "Inject movable.sed", NULL, 0 },
-            { "Inject seedsave.bin", NULL, 0 },
-            { "Inject updtsave.bin", NULL, 0 }
+            { "Inject ticket.db", "Inject ticket.db into sysnand.", 0 },
+            { "Inject title.db", "Inject title.db into sysnand.", 0 },
+            { "Inject import.db", "Inject import.db into sysnand.", 0 },
+            { "Inject certs.db", "Inject certs.db into sysnand.", 0 },
+            { "Inject SecureInfo_A", "Inject SecureInfo_A into sysnand.", 0 },
+            { "Inject LocalFriendCodeSeed_B", "Inject Local_Friend Code_Seed_B into sysnand.", 0 },
+            { "Inject rand_seed", "Inject rand_seed into sysnand.", 0 },
+            { "Inject movable.sed", "Inject movable.sed into sysnand.", 0 },
+            { "Inject seedsave.bin", "Inject seedsave.bin into emunand. OLD 3DS 9.6+ ONLY FOR NOW...", 0 },
+            { "Inject updtsave.bin", "Inject updtsave.bin into sysnand.", 0 }
         }
     },
     {
