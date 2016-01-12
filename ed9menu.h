@@ -30,12 +30,10 @@ MenuInfo menu[] =
         }
     },
     {
-        "SD Format Options", 4,
+        "SD Format Options", 2,
         {
-            { "Format SD (EmuNAND)", NULL, 0 },
-            { "Format SD (EmuNAND/auto)", NULL, 0 },
-            { "Format SD (standard)", NULL, 0 },
-            { "Format SD (standard/auto)", NULL, 0 }
+            { "Format SD...", NULL, SUBMENU_START + 2 },
+            { "Format SD & setup starter...", NULL, SUBMENU_START + 3 }
         }
     },
     {
@@ -46,6 +44,22 @@ MenuInfo menu[] =
             { "Clone EmuNAND.bin to EmuNAND", NULL, 0 },
             { "Dump SysNAND to NAND.bin", NULL, 0 },
             { "Dump EmuNAND to EmuNAND.bin", NULL, 0 }
+        }
+    },
+    {
+        "Format SD...", 3,
+        {
+            { "... without EmuNAND", NULL, 0 },
+            { "... for EmuNAND (default)", NULL, 0 },
+            { "... for EmuNAND (legacy)", NULL, 0 }
+        }
+    },
+    {
+        "Format SD & setup starter...", 3,
+        {
+            { "... without EmuNAND", NULL, 0 },
+            { "... for EmuNAND (default)", NULL, 0 },
+            { "... for EmuNAND (legacy)", NULL, 0 }
         }
     },
     {
