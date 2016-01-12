@@ -1,11 +1,23 @@
-#include "common.h"
-#include "d9menu.h"
-//#include "ed9menu.h"
+#define EMUNAND9
 
-#define base_gfx_main "base_bot.png"
-#define base_gfx_sub "base_sub.png"
-#define entry_active_gfx "entry_active.png"
+#include "common.h"
+#ifdef DECRYPT9
+#include "d9menu.h"
+#else
+#include "ed9menu.h"
+#endif
+
+#ifdef DECRYPT9
+#define base_gfx_main "base_bot_D9.png"
+#define base_gfx_sub "base_sub_D9.png"
+#define entry_active_gfx "entry_active_D9.png"
 // #define entry_inactive_gfx "entry_inactive.png"
+#else
+#define base_gfx_main "base_bot_E9.png"
+#define base_gfx_sub "base_sub_E9.png"
+#define entry_active_gfx "entry_active_E9.png"
+// #define entry_inactive_gfx "entry_inactive.png"
+#endif
 
 #define entry_start_x 12
 #define entry_start_y 39
@@ -18,8 +30,11 @@
 #define entry_font_size 11
 #define entry_font_kerning 0.2
 #define entry_font_strokewidth 0.5
+#ifdef DECRYPT9
 #define entry_active_color "#00B7FF" //Decrypt9
-//#define entry_active_color "WHITE" //Emunand9
+#else
+#define entry_active_color "WHITE" //Emunand9
+#endif
 #define entry_active_color_stroke "#00B7FF00"
 #define entry_inactive_color "#006E99"
 #define entry_inactive_color_stroke "#006E9900"
@@ -31,8 +46,11 @@
 #define menu_font_size 11
 #define menu_font_kerning 0.2
 #define menu_font_strokewidth 0.5
+#ifdef DECRYPT9
 #define menu_active_color "#00B7FF" //Decrypt9
-//#define menu_active_color "WHITE" //Emunand9
+#else
+#define menu_active_color "WHITE" //Emunand9
+#endif
 #define menu_active_color_stroke "#00B7FF00"
 #define menu_inactive_color "#006E99"
 #define menu_inactive_color_stroke "#006E9900"
