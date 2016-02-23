@@ -1,4 +1,5 @@
-#define EMUNAND9
+#define DECRYPT9
+//#define EMUNAND9
 
 #include "common.h"
 #ifdef DECRYPT9

@@ -37,13 +37,12 @@ MenuInfo menu[] =
         }
     },
     {
-        "EmuNAND Manager Options", 5,
+        "EmuNAND Manager Options", 4,
         {
             { "Clone SysNAND to EmuNAND", NULL, 0 },
-            { "Clone NAND.bin to EmuNAND", NULL, 0 },
-            { "Clone EmuNAND.bin to EmuNAND", NULL, 0 },
-            { "Dump SysNAND to NAND.bin", NULL, 0 },
-            { "Dump EmuNAND to EmuNAND.bin", NULL, 0 }
+            { "Clone file to EmuNAND", NULL, 0 },
+            { "Dump SysNAND to file", NULL, 0 },
+            { "Dump EmuNAND to file", NULL, 0 }
         }
     },
     {

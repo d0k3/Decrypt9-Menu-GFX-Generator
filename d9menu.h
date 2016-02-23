@@ -18,12 +18,16 @@ typedef struct {
 MenuInfo menu[] =
 {
     {
-        "XORPAD", 4,
+        "XORPAD", 8,
         {
             { "NCCH PADGEN", "Generate the xorpads needed to decrypt and encrypt 3ds titles.", 0 },
-            { "SD PADGEN", "Generate the xorpads needed to decrypt and encrypt SD card contents.", 0 },
+            { "SD PADGEN (SDinfo.bin)", "Generate the xorpads needed to decrypt and encrypt SD card contents.", 0 },
+            { "SD PADGEN (SysNAND dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the SysNAND directory.", 0 },
+            { "SD PADGEN (EmuNAND dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the EmuNAND directory.", 0 },
             { "CTRNAND PADGEN", "Generate the xorpads needed to decrypt and encrypt your main nand partition.", 0 },
-            { "TWLNAND PADGEN", "Generate the xorpads needed to decrypt and encrypt your TWL nand partition.", 0 }
+            { "CTRNAND PADGEN (slot 0x4)", "Generate the xorpads needed to decrypt and encrypt your main nand partition.", 0 },
+            { "TWLNAND PADGEN", "Generate the xorpads needed to decrypt and encrypt your TWL nand partition.", 0 },
+            { "FIRM0FIRM1 PADGEN", "Generate the xorpads needed to decrypt and encrypt your FIRM0 and FIRM1 nand partitions.", 0 }
         }
     },
     {
@@ -58,18 +62,22 @@ MenuInfo menu[] =
             { "FILE INJECT...", "Inject selected files into emunand.", 0 },
             { "HEALTH&SAFETY DUMP", "Backup the health and safety app from emunand.", 0 },
             { "HEALTH&SAFETY INJECT", "Inject the health and safety app into emunand.", 0 },
-            { "UPDATE SEEDDB", "Dump Seeddb.bin from Emunand. OLD 3DS 9.6+ ONLY FOR NOW...", 0 }
+            { "UPDATE SEEDDB", "Dump Seeddb.bin from Emunand.", 0 }
         }
     },
     {
-        "GAME", 6,
+        "GAME", 10,
         {
             { "NCCH/NCSD DECRYPTOR", "Fully decrypt all NCCH/NCSD files in work or game folder. Files with .3DS and .APP extension belong into this category.", 0 },
             { "NCCH/NCSD ENCRYPTOR", "(Re-)Encrypt NCCH/NCSD files with standard compression. On some hardware this might be needed for compatibility.", 0 },
             { "CIA DECRYPTOR (SHALLOW)", "Decrypt the first layer of CIA encryption, but leave the internal NCCH encryption untouched. This processes all CIAs in work / game folder.", 0 },
             { "CIA DECRYPTOR (DEEP)", "Fully decrypt all CIA files in work / game folder.", 0 },
             { "CIA DECRYPTOR (CXI only)", "Decrypt all CIA files in work / game folder, but leave everything but the CXI untouched. On some hardware this might be needed for compatibility.", 0 },
-            { "SD DECRYPTOR/ENCRYPTOR", "Decrypt or encrypt the SD files inside your work / game folder. You first need to copy the folder structure from /Nintendo 3DS/<id0>/<id1>", 0 }
+            { "CIA ENCRYPTOR (NCCH)", "Encrypt the NCCH layer of all CIA files inside the work / game folder.", 0 },
+            { "CIA ENCRYPTOR (CXI only)", "Encrypt the CXI content of all CIA files inside the work / game folder.", 0 },
+            { "SD DECRYPTOR/ENCRYPTOR", "Decrypt or encrypt the SD files inside your work / game folder. You first need to copy the folder structure from /Nintendo 3DS/<id0>/<id1>", 0 },
+            { "SD DECRYPTOR (Sys dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the SysNAND directory.", 0 },
+            { "SD DECRYPTOR (Emu dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the EmuNAND directory.", 0 }
         }
     },
     // everything below is not contained in the main menu
@@ -118,7 +126,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "FILE DUMP... (SYSNAND)", 9, // ID 4
+        "FILE DUMP... (SYSNAND)", 10, // ID 4
         {
             { "Dump ticket.db", "Dump ticket.db from sysnand.", 0 },
             { "Dump title.db", "Dump title.db from sysnand.", 0 },
@@ -128,11 +136,12 @@ MenuInfo menu[] =
             { "Dump LocalFriendCodeSeed_B", "Dump Local_Friend Code_Seed_B from sysnand.", 0 },
             { "Dump rand_seed", "Dump rand_seed from sysnand.", 0 },
             { "Dump movable.sed", "Dump movable.sed from sysnand.", 0 },
-            { "Dump updtsave.bin", "Dump updtsave.bin from sysnand.", 0 }
+            { "Dump nagsave.bin", "Dump nagsave.bin from sysnand.", 0 },
+            { "Dump nnidsave.bin", "Dump nnidsave.bin from sysnand.", 0 }
         }
     },
     {
-        "FILE DUMP... (EMUNAND)", 10, // ID 5
+        "FILE DUMP... (EMUNAND)", 11, // ID 5
         {
             { "Dump ticket.db", "Dump ticket.db from emunand.", 0 },
             { "Dump title.db", "Dump title.db from emunand.", 0 },
@@ -142,12 +151,13 @@ MenuInfo menu[] =
             { "Dump LocalFriendCodeSeed_B", "Dump Local_Friend Code_Seed_B from emunand.", 0 },
             { "Dump rand_seed", "Dump rand_seed from emunand.", 0 },
             { "Dump movable.sed", "Dump movable.sed from emunand.", 0 },
-            { "Dump seedsave.bin", "Dump seedsave.bin from emunand. OLD 3DS 9.6+ ONLY FOR NOW...", 0 },
-            { "Dump updtsave.bin", "Dump updtsave.bin from emunand.", 0 }
+            { "Dump seedsave.bin", "Dump seedsave.bin from emunand.", 0 },
+            { "Dump nagsave.bin", "Dump nagsave.bin from emunand.", 0 },
+            { "Dump nnidsave.bin", "Dump nnidsave.bin from sysnand.", 0 }
         }
     },
     {
-        "FILE INJECT... (SYSNAND)", 9, // ID 6
+        "FILE INJECT... (SYSNAND)", 10, // ID 6
         {
             { "Inject ticket.db", "Inject ticket.db into sysnand.", 0 },
             { "Inject title.db", "Inject title.db into sysnand.", 0 },
@@ -157,11 +167,12 @@ MenuInfo menu[] =
             { "Inject LocalFriendCodeSeed_B", "Inject Local_Friend Code_Seed_B into sysnand.", 0 },
             { "Inject rand_seed", "Inject rand_seed into sysnand.", 0 },
             { "Inject movable.sed", "Inject movable.sed into sysnand.", 0 },
-            { "Inject updtsave.bin", "Inject updtsave.bin into sysnand.", 0 }
+            { "Inject nagsave.bin", "Inject nagsave.bin into sysnand.", 0 },
+            { "Inject nnidsave.bin", "Inject nnidsave.bin into sysnand.", 0 }
         }
     },
     {
-        "FILE INJECT... (EMUNAND)", 10, // ID 7
+        "FILE INJECT... (EMUNAND)", 11, // ID 7
         {
             { "Inject ticket.db", "Inject ticket.db into sysnand.", 0 },
             { "Inject title.db", "Inject title.db into sysnand.", 0 },
@@ -171,11 +182,12 @@ MenuInfo menu[] =
             { "Inject LocalFriendCodeSeed_B", "Inject Local_Friend Code_Seed_B into sysnand.", 0 },
             { "Inject rand_seed", "Inject rand_seed into sysnand.", 0 },
             { "Inject movable.sed", "Inject movable.sed into sysnand.", 0 },
-            { "Inject seedsave.bin", "Inject seedsave.bin into emunand. OLD 3DS 9.6+ ONLY FOR NOW...", 0 },
-            { "Inject updtsave.bin", "Inject updtsave.bin into sysnand.", 0 }
+            { "Inject seedsave.bin", "Inject seedsave.bin into emunand.", 0 },
+            { "Inject nagsave.bin", "Inject nagsave.bin into sysnand.", 0 },
+            { "Inject nnidsave.bin", "Inject nnidsave.bin into sysnand.", 0 }
         }
     },
     {
-        NULL, 0, {}, // empty menu to signal end
+        NULL, 0, { { 0 } }, // empty menu to signal end
     }
 };
