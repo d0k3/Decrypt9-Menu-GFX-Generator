@@ -1,7 +1,7 @@
 #pragma once
 
 #define MENU_MAX_ENTRIES 12
-#define SUBMENU_START 5
+#define SUBMENU_START 6
 
 typedef struct {
     char* name;
@@ -39,7 +39,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "SYSNAND", 8,
+        "SYSNAND", 9,
         {
             { "NAND BACKUP", "Backup your sysnand. It is highly recommended to backup your sysnand", 0 },
             { "NAND RESTORE", "Restore your sysnand backup. Proceed with caution!!", 0 },
@@ -48,7 +48,8 @@ MenuInfo menu[] =
             { "FILE DUMP...", "Backup selected files from sysnand.", 0 },
             { "FILE INJECT...", "Inject selected files into sysnand.", 0 },
             { "HEALTH&SAFETY DUMP", "Backup the health and safety app from sysnand.", 0 },
-            { "HEALTH&SAFETY INJECT", "Inject the health and safety app into sysnand.", 0 }
+            { "HEALTH&SAFETY INJECT", "Inject the health and safety app into sysnand.", 0 },
+            { "UPDATE SEEDDB", "Dump Seeddb.bin from Sysnand.", 0 }
         }
     },
     {
@@ -78,6 +79,13 @@ MenuInfo menu[] =
             { "SD DECRYPTOR/ENCRYPTOR", "Decrypt or encrypt the SD files inside your work / game folder. You first need to copy the folder structure from /Nintendo 3DS/<id0>/<id1>", 0 },
             { "SD DECRYPTOR (Sys dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the SysNAND directory.", 0 },
             { "SD DECRYPTOR (Emu dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the EmuNAND directory.", 0 }
+        }
+    },
+    {
+        "SELFTEST", 2,
+        {
+            { "CREATE SELFTEST REFERENCE", "Create Selftest Reference", 0 },
+            { "RUN SELFTEST", "Run Selftest", 0 }
         }
     },
     // everything below is not contained in the main menu
@@ -126,7 +134,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "FILE DUMP... (SYSNAND)", 10, // ID 4
+        "FILE DUMP... (SYSNAND)", 11, // ID 4
         {
             { "Dump ticket.db", "Dump ticket.db from sysnand.", 0 },
             { "Dump title.db", "Dump title.db from sysnand.", 0 },
@@ -136,6 +144,7 @@ MenuInfo menu[] =
             { "Dump LocalFriendCodeSeed_B", "Dump Local_Friend Code_Seed_B from sysnand.", 0 },
             { "Dump rand_seed", "Dump rand_seed from sysnand.", 0 },
             { "Dump movable.sed", "Dump movable.sed from sysnand.", 0 },
+            { "Dump seedsave.bin", "Dump seedsave.bin from sysnand.", 0 },
             { "Dump nagsave.bin", "Dump nagsave.bin from sysnand.", 0 },
             { "Dump nnidsave.bin", "Dump nnidsave.bin from sysnand.", 0 }
         }
