@@ -37,10 +37,12 @@ MenuInfo menu[] =
         }
     },
     {
-        "EmuNAND Manager Options", 4,
+        "EmuNAND Manager Options", 6,
         {
             { "Clone SysNAND to EmuNAND", NULL, 0 },
+            { "Clone SysNAND to RedNAND", NULL, 0 },
             { "Clone file to EmuNAND", NULL, 0 },
+            { "Clone file to RedNAND", NULL, 0 },
             { "Dump SysNAND to file", NULL, 0 },
             { "Dump EmuNAND to file", NULL, 0 }
         }
@@ -62,6 +64,6 @@ MenuInfo menu[] =
         }
     },
     {
-        NULL, 0, {}, // empty menu to signal end
+        NULL, 0, { { 0 } }, // empty menu to signal end
     }
 };

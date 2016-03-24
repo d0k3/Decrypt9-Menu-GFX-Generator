@@ -18,14 +18,13 @@ typedef struct {
 MenuInfo menu[] =
 {
     {
-        "XORPAD", 8,
+        "XORPAD", 7,
         {
             { "NCCH PADGEN", "Generate the xorpads needed to decrypt and encrypt 3ds titles.", 0 },
             { "SD PADGEN (SDinfo.bin)", "Generate the xorpads needed to decrypt and encrypt SD card contents.", 0 },
             { "SD PADGEN (SysNAND dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the SysNAND directory.", 0 },
             { "SD PADGEN (EmuNAND dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the EmuNAND directory.", 0 },
             { "CTRNAND PADGEN", "Generate the xorpads needed to decrypt and encrypt your main nand partition.", 0 },
-            { "CTRNAND PADGEN (slot 0x4)", "Generate the xorpads needed to decrypt and encrypt your main nand partition.", 0 },
             { "TWLNAND PADGEN", "Generate the xorpads needed to decrypt and encrypt your TWL nand partition.", 0 },
             { "FIRM0FIRM1 PADGEN", "Generate the xorpads needed to decrypt and encrypt your FIRM0 and FIRM1 nand partitions.", 0 }
         }
@@ -67,7 +66,7 @@ MenuInfo menu[] =
         }
     },
     {
-        "GAME", 10,
+        "GAME", 9,
         {
             { "NCCH/NCSD DECRYPTOR", "Fully decrypt all NCCH/NCSD files in work or game folder. Files with .3DS and .APP extension belong into this category.", 0 },
             { "NCCH/NCSD ENCRYPTOR", "(Re-)Encrypt NCCH/NCSD files with standard compression. On some hardware this might be needed for compatibility.", 0 },
@@ -75,7 +74,6 @@ MenuInfo menu[] =
             { "CIA DECRYPTOR (DEEP)", "Fully decrypt all CIA files in work / game folder.", 0 },
             { "CIA DECRYPTOR (CXI only)", "Decrypt all CIA files in work / game folder, but leave everything but the CXI untouched. On some hardware this might be needed for compatibility.", 0 },
             { "CIA ENCRYPTOR (NCCH)", "Encrypt the NCCH layer of all CIA files inside the work / game folder.", 0 },
-            { "CIA ENCRYPTOR (CXI only)", "Encrypt the CXI content of all CIA files inside the work / game folder.", 0 },
             { "SD DECRYPTOR/ENCRYPTOR", "Decrypt or encrypt the SD files inside your work / game folder. You first need to copy the folder structure from /Nintendo 3DS/<id0>/<id1>", 0 },
             { "SD DECRYPTOR (Sys dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the SysNAND directory.", 0 },
             { "SD DECRYPTOR (Emu dir)", "Generate the xorpads needed to decrypt and encrypt SD card contents for the selected file(s) from the EmuNAND directory.", 0 }
